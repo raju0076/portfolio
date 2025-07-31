@@ -1,94 +1,103 @@
-import React from 'react';
+import React from "react";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaPython,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiRedis,
+ 
+} from "react-icons/si";
+import "../Styles/skills.css"
+const skills = [
+  { name: "React", icon: <FaReact />, color: "from-blue-400 to-cyan-400" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "from-gray-800 to-gray-600" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "from-blue-600 to-blue-400" },
+  { name: "JavaScript", icon: <SiJavascript />, color: "from-yellow-400 to-yellow-300" },
+  { name: "HTML5", icon: <FaHtml5 />, color: "from-orange-500 to-red-500" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "from-blue-500 to-purple-500" },
+  { name: "Tailwind", icon: <SiTailwindcss />, color: "from-teal-400 to-blue-500" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "from-green-500 to-green-400" },
+  { name: "Express", icon: <SiExpress />, color: "from-gray-700 to-gray-500" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "from-green-600 to-green-400" },
+  { name: "MySQL", icon: <SiMysql />, color: "from-blue-600 to-blue-400" },
+  { name: "Redis", icon: <SiRedis />, color: "from-red-500 to-red-400" },
+  { name: "Python", icon: <FaPython />, color: "from-yellow-500 to-blue-500" },
+  { name: "Git", icon: <FaGitAlt />, color: "from-orange-600 to-red-600" },
+  // { name: "Azure", icon: <SiAzure />, color: "from-blue-500 to-cyan-400" },
+  { name: "Docker", icon: <FaDocker />, color: "from-blue-600 to-blue-400" },
+];
+
+const duplicatedSkills = [...skills, ...skills]; // for infinite scroll
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React", level: 95 },
-        { name: "Next.js", level: 85 },
-        {name:"HTML", level:95},
-        {name:"Javascript",level:95},
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 92 },
-        
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 95 },
-        { name: "Express.js", level: 95 },
-        { name: "mySQL", level: 85 },
-        { name: "MongoDB", level: 90 },
-        {name:"Redis",level:80},
-       
-      ]
-    },
-    {
-      title: "Programming Languages",
-skills: [
-  { name: "Python", level: 90 },
-  { name: "JavaScript", level: 90 }
-]
-
-    },
-    {
-      title: "Tools & Others",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "Azure", level: 75 },
-        { name: "Cursor", level: 70 },
-        
-      ]
-    }
-  ];
-
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-indigo-900 via-slate-900 to-purple-900 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <section
+      id="skills"
+      className="py-24 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden"
+    >
+      {/* Blurred Background Circles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-            Skills & Expertise
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl mb-6 shadow-lg">
+            <span className="text-white text-2xl">⚡</span>
+          </div>
+          <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-6">
+            Tech Stack
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life.
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Technologies and tools I use to build exceptional digital experiences
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 border border-white/10 hover:border-cyan-500/30"
-            >
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                {category.title}
-              </h3>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-200 font-medium">{skill.name}</span>
-                      <span className="text-cyan-400 font-semibold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-700/50 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out shadow-lg shadow-cyan-500/25"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+        {/* Auto Scroll Rows */}
+        <div className="overflow-hidden space-y-8">
+          {/* Top Row - Right Scroll */}
+          <div className="scroll-row scroll-right">
+            {duplicatedSkills.map((skill, index) => (
+              <div
+                key={`top-${index}`}
+                className={`min-w-[160px] mx-2 p-6 rounded-2xl bg-gradient-to-r ${skill.color} text-white flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300`}
+              >
+                <div className="text-4xl mb-2">{skill.icon}</div>
+                <div className="font-semibold text-sm">{skill.name}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Bottom Row - Left Scroll */}
+          <div className="scroll-row scroll-left">
+            {duplicatedSkills
+              .slice()
+              .reverse()
+              .map((skill, index) => (
+                <div
+                  key={`bottom-${index}`}
+                  className={`min-w-[160px] mx-2 p-6 rounded-2xl bg-gradient-to-r ${skill.color} text-white flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300`}
+                >
+                  <div className="text-4xl mb-2">{skill.icon}</div>
+                  <div className="font-semibold text-sm">{skill.name}</div>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </section>

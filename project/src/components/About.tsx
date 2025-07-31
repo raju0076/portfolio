@@ -26,44 +26,49 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <section id="about" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-950 relative overflow-hidden">
+      {/* Blurred background circles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[-100px] left-1/4 w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-100px] right-1/4 w-[300px] h-[300px] bg-purple-500/20 rounded-full blur-[100px]" />
       </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-extrabold text-white tracking-tight drop-shadow-md">
             About Me
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I'm a passionate full-stack developer with expertise in modern web technologies. 
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            I'm Golla Nagaraju, a passionate full-stack developer with expertise in modern web technologies. 
             I love turning complex problems into elegant, scalable solutions.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-white">
               Crafting Digital Experiences
             </h3>
-            <p className="text-gray-300 leading-relaxed">
-              As a dedicated full-stack developer, I specialize in creating 
-              responsive, user-friendly applications using React, TypeScript, and modern CSS frameworks. 
-              I'm passionate about writing clean, maintainable code and staying up-to-date with 
-              the latest industry trends.
+            <p className="text-gray-300 leading-loose">
+              As a Computer Science graduate from Sri Krishnadevaraya University and a certified Full Stack Developer 
+              from Masai School, I specialize in creating responsive, user-friendly applications using 
+              React, Node.js, and modern web technologies. My educational foundation combined with 
+              hands-on experience drives my passion for writing clean, maintainable code.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+            <p className="text-gray-300 leading-loose">
+              I believe in continuous learning and staying current with industry trends. My goal is to 
+              create innovative digital solutions that make a meaningful impact while delivering 
+              exceptional user experiences.
             </p>
-            
-            <div className="flex flex-wrap gap-3 mt-6">
-              {['React', 'Next.js', 'Node.js', 'javascript', 'MongoDB', 'Express'].map((tech) => (
+
+            <div className="flex flex-wrap gap-3 pt-4">
+              {['React', 'Next.js', 'Node.js', 'JavaScript', 'MongoDB', 'Express'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-full text-sm font-medium border border-cyan-500/30 backdrop-blur-sm hover:scale-105 transition-transform duration-200"
+                  className="px-4 py-2 bg-white/5 backdrop-blur-sm text-cyan-300 rounded-full text-sm font-medium border border-cyan-400/20 hover:scale-105 transition-all duration-200 shadow-sm shadow-cyan-400/10"
                 >
                   {tech}
                 </span>
@@ -71,11 +76,12 @@ const About = () => {
             </div>
           </div>
 
+          {/* Right Column (Feature Cards) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-white/10 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 border border-white/10 hover:border-cyan-500/30"
+                className="p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-lg transition-all duration-300 shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-400/30 hover:-translate-y-1"
               >
                 <div className="text-cyan-400 mb-4">
                   {feature.icon}
@@ -83,7 +89,7 @@ const About = () => {
                 <h4 className="text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h4>
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-300 text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
