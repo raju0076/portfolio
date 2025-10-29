@@ -14,11 +14,10 @@ const Projects = () => {
     {
   title: "SkillHub",
   description: "SkillHub is a full-stack platform for skill development and learning. Built with Next.js, Node.js, Express, MongoDB, and Redis for caching, it features user authentication, course management, real-time updates, and optimized performance with secure JWT-based access.",
-  image: "https://user-images.githubusercontent.com/your-image-link-or-placeholder.jpg", // Replace with an actual screenshot URL
+  image: "https://www.stpatrickscollege-dungannon.net/wp-content/uploads/2023/09/bronze.png",
   technologies: ["Next.js", "Node.js", "Express", "MongoDB", "Redis", "JWT"],
   liveUrl: "https://skillhub-fe.vercel.app/",
-  githubUrl: "https://github.com/raju0076/skillhub_fe",
-  backendUrl: "https://github.com/raju0076/skillhub-backend"
+  githubUrl: "https://github.com/raju0076/skillhub-backend",
 }
 ,
     {
